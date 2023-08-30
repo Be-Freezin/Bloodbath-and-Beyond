@@ -12,11 +12,16 @@ export default {
 				'primary-black': 'var(--primary-black)',
 				'button-muted': 'var(--primary-color-muted)',
 			},
-			fontFamily:{
-				'heroking': ['heroking', 'san-serif'],
-				'inika': ['inika', 'serif']
+			fontFamily: {
+				heroking: ['heroking', 'san-serif'],
+				inika: ['inika', 'serif'],
+			},
 
-			}
+			boxShadow: {
+				'3xl': '15px 8px 0 -5px #111010',
+				'button': '5px 3px 0 -1px #111010',
+
+			},
 		},
 	},
 	plugins: [],
