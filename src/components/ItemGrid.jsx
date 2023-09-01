@@ -3,7 +3,7 @@ import ItemData from '../ItemData'
 
 const ItemGrid = () => {
   return (
-		<div className='grid grid-rows-4 grid-cols-4 gap-4 place-items-center'>
+		<div id="store" className='grid grid-rows-4 grid-cols-4 gap-4 place-items-center'>
 			{ItemData.items.map((item) => (
 				<ItemCard key={item.id} {...item} />
 			))}

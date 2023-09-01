@@ -1,9 +1,8 @@
-import React from 'react'
 import Chest from '../assets/Chest-bg.png'
 
 const About = () => {
 	return (
-		<div className='mt-20'>
+		<div id='about' className='mt-20'>
 			<h2 className='font-heroking text-7xl text-primary-white font-outline-2'>
 				Why spend your gold here?
 			</h2>
