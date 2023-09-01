@@ -14,8 +14,12 @@ const ItemCard = ({ id, name, type, price, description, imagePath }) => {
 			<h2 className='mt-4 font-bold'>{name}</h2>
 			<p className='text-sm'>Type: {type}</p>
 			{toggleDescription ? (
-				<div className={`absolute rounded-2xl h-[335px] bg-primary-black flex flex-col justify-between  transform ${toggleDescription ? 'translate-y-0' : 'translate-y-full'} transition-transform duration-500 ease-in-out`}>
-          {/* WORK ON A TRANSITION FOR THE CARD. */}
+				<div
+					className={`absolute rounded-2xl h-[335px] bg-primary-black flex flex-col justify-between  transform ${
+						toggleDescription ? 'translate-y-0' : 'translate-y-full'
+					} transition-transform duration-500 ease-in-out`}
+				>
+					{/* WORK ON A TRANSITION FOR THE CARD. */}
 					<p className='text-left flex justify-center items-center mx-4 my-8  text-primary-white '>
 						{description}
 					</p>

@@ -2,6 +2,7 @@ import Nav from "./Nav"
 import Header from "./Header"
 import ItemGrid from "./ItemGrid"
 import About from "./About"
+import Location from "./Location"
 
 const MenuContainer = () => {
   return (
@@ -10,6 +11,7 @@ const MenuContainer = () => {
 			<Header />
 			<ItemGrid />
 			<About />
+			<Location />
 		</div>
 	)
 }

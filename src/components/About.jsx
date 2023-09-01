@@ -2,7 +2,7 @@ import React from 'react'
 import Chest from '../assets/Chest-bg.png'
 
 const About = () => {
-  return (
+	return (
 		<div className='mt-20'>
 			<h2 className='font-heroking text-7xl text-primary-white font-outline-2'>
 				Why spend your gold here?
@@ -16,13 +16,13 @@ const About = () => {
 						Beyond. Remember, when the going gets tough, the tough come shopping
 						at Bloodbath and Beyond!
 					</p>
-          <br />
+					<br />
 					<p>
 						While he&apos;s swapped his battle staff for a sales ledger,
 						underestimate him not! His arsenal? A trove of trinkets and tools,
 						each echoing tales of his tumultuous times.
 					</p>
-          <br />
+					<br />
 					<p>
 						Remember, when the going gets tough, the tough come shopping at
 						Bloodbath and Beyond!
