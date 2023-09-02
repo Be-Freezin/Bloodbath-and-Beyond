@@ -2,18 +2,17 @@ import Chest from '../assets/Chest-bg.png'
 
 const About = () => {
 	return (
-		<div id='about' className='mt-20'>
-			<h2 className='font-heroking text-7xl text-primary-white font-outline-2'>
+		<div id='about' className='mt-20 px-2'>
+			<h2 className='font-heroking md:text-7xl text-3xl text-primary-white md:font-outline-2'>
 				Why spend your gold here?
 			</h2>
-			<div className='flex flex-row items-center justify-evenly mt-20'>
+			<div className='flex flex-col md:flex-row items-center justify-evenly mt-20'>
 				<img src={Chest} alt='' />
-				<div className='font-inika text-primary-white text-left w-2/6'>
+				<div className='font-inika text-primary-white  mt-10 md:mt-0 text-left md:w-2/6'>
 					<p>
 						Established eons ago by the legendary Eldertwig, the Gnome Druid. A
 						hero of yesteryears&apos; wars, he now beckons you to Bloodbath and
-						Beyond. Remember, when the going gets tough, the tough come shopping
-						at Bloodbath and Beyond!
+						Beyond.
 					</p>
 					<br />
 					<p>
