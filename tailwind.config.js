@@ -20,11 +20,9 @@ export default {
 
 			boxShadow: {
 				'3xl': '15px 8px 0 -5px #111010',
-				'button': '5px 3px 0 -1px #111010',
-
+				button: '5px 3px 0 -1px #111010',
 			},
 		},
 	},
 	plugins: [],
 }
-
