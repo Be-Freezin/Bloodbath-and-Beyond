@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/logo.png'
 import Bag from '../assets/icons/Bag.png'
 import Coins from '../assets/icons/coin stack.png'
 import Close from '../assets/icons/sword x.svg'
 import Hamburger from '../assets/icons/sword hamburger.svg'
+import { useCart } from '../context/CartContext'
 
 const Nav = () => {
 	const [toggleMenu, setToggleMenu] = useState(false)
+	const { cart } = useCart()
 
 	const menuClosedHandler = () => {
 		setToggleMenu(false)
@@ -32,24 +35,34 @@ const Nav = () => {
 
 				<ul className='hidden sm:flex w-1/2 justify-evenly font-bold'>
 					<li className='cursor-pointer'>
-						<Link activeClass='active' to='store' smooth={true} duration={500}>
+						<ScrollLink
+							activeClass='active'
+							to='store'
+							smooth={true}
+							duration={500}
+						>
 							Store
-						</Link>
+						</ScrollLink>
 					</li>
 					<li className='cursor-pointer'>
-						<Link activeClass='active' to='about' smooth={true} duration={500}>
+						<ScrollLink
+							activeClass='active'
+							to='about'
+							smooth={true}
+							duration={500}
+						>
 							About
-						</Link>
+						</ScrollLink>
 					</li>
 					<li className='cursor-pointer'>
-						<Link
+						<ScrollLink
 							activeClass='active'
 							to='location'
 							smooth={true}
 							duration={500}
 						>
 							Find Us
-						</Link>
+						</ScrollLink>
 					</li>
 				</ul>
 				<img
@@ -60,15 +73,31 @@ const Nav = () => {
 				/>
 
 				<div className='sm:flex flex-row justify-between items-center hidden '>
-					<div className='flex flex-row justify-center items-center w-full'>
-						<img className='w-5 mr-2 hover:cursor-pointer' src={Coins} alt='' />
-						<span className='text-xl mr-4'>1,200</span>
+					<div className='flex flex-row justify-center items-center mr-4 w-full'>
+						<Link to={'wallet'} className='flex items-center justify-center'>
+							<img
+								className='w-5 mr-2 hover:cursor-pointer'
+								src={Coins}
+								alt=''
+							/>
+							<span className='text-xl mr-4'>1,200</span>
+						</Link>
 					</div>
-					<img
-						className='w-[30px] h-[30px] hover:cursor-pointer'
-						src={Bag}
-						alt=''
-					/>
+					<div className='relative'>
+						<Link to={`cart`}>
+							{cart.length === 0 ? null : (
+								<div className='rounded-full bg-primary-white absolute w-6 left-4 bottom-3 font-bold'>
+									{cart.length}
+								</div>
+							)}
+
+							<img
+								className='w-[33px] h-[27px] hover:cursor-pointer z-50'
+								src={Bag}
+								alt=''
+							/>
+						</Link>
+					</div>
 				</div>
 			</nav>
 			{toggleMenu && (
@@ -80,7 +109,7 @@ const Nav = () => {
 						<div className='flex flex-row justify-center h-full  items-center'>
 							<ul className='h-1/2  w-1/2 flex flex-col justify-evenly font-bold text-2xl text-primary-white'>
 								<li className='cursor-pointer'>
-									<Link
+									<ScrollLink
 										activeClass='active'
 										to='store'
 										smooth={true}
@@ -88,10 +117,10 @@ const Nav = () => {
 										onClick={menuClosedHandler}
 									>
 										Store
-									</Link>
+									</ScrollLink>
 								</li>
 								<li className='cursor-pointer'>
-									<Link
+									<ScrollLink
 										activeClass='active'
 										to='about'
 										smooth={true}
@@ -99,10 +128,10 @@ const Nav = () => {
 										onClick={menuClosedHandler}
 									>
 										About
-									</Link>
+									</ScrollLink>
 								</li>
 								<li className='cursor-pointer'>
-									<Link
+									<ScrollLink
 										activeClass='active'
 										to='location'
 										smooth={true}
@@ -110,7 +139,7 @@ const Nav = () => {
 										onClick={menuClosedHandler}
 									>
 										Find Us
-									</Link>
+									</ScrollLink>
 								</li>
 							</ul>
 						</div>

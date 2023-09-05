@@ -1,11 +1,31 @@
 import React from 'react'
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
+import Cart from './routes/Cart.jsx'
+import Wallet from './routes/Wallet.jsx'
 import App from './App.jsx'
 import './index.css'
+import { CartProvider } from './context/CartContext.jsx'
+
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <App />,
+	},
+	{
+		path: 'cart',
+		element: <Cart />,
+	},
+	{
+		path: 'wallet',
+		element: <Wallet />,
+	},
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+	<React.StrictMode>
+		<CartProvider>
+			<RouterProvider router={router} />
+		</CartProvider>
+	</React.StrictMode>
 )
