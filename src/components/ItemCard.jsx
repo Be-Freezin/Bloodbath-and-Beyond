@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+import useAddToCart from '../hooks/useAddToCart'
 import Gold from '../assets/icons/coin stack.png'
 
+
+	
+
+
 const ItemCard = ({ id, name, type, price, description, imagePath }) => {
+	const currentItem = {id,name, type, price, description, imagePath}
 	const [toggleDescription, setToggleDescription] = useState(false)
+	const addToCart = useAddToCart()
 
 	return (
 		<div className='relative flex flex-col justify-evenly items-center bg-primary-white w-4/5  font-inika p-8 rounded-2xl border-4 border-primary-black shadow-3xl '>
@@ -42,7 +49,9 @@ const ItemCard = ({ id, name, type, price, description, imagePath }) => {
 				<img className='w-5' src={Gold} alt='' />
 				<p>{price}</p>
 			</div>
-			<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'>
+			<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
+			onClick={() => addToCart(currentItem)}
+			>
 				Purchase
 			</button>
 		</div>

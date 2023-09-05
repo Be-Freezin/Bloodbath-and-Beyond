@@ -5,25 +5,27 @@ import Cart from './routes/Cart.jsx'
 import Wallet from './routes/Wallet.jsx'
 import App from './App.jsx'
 import './index.css'
+import { CartProvider } from './context/CartContext.jsx'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
 	},
-  {
-    path: 'cart',
-    element: <Cart />,
-  },
-  {
-    path: 'wallet',
-    element: <Wallet />,
-  },
+	{
+		path: 'cart',
+		element: <Cart />,
+	},
+	{
+		path: 'wallet',
+		element: <Wallet />,
+	},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-    
-  </React.StrictMode>,
+	<React.StrictMode>
+		<CartProvider>
+			<RouterProvider router={router} />
+		</CartProvider>
+	</React.StrictMode>
 )
