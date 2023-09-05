@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/logo.png'
 import Bag from '../assets/icons/Bag.png'
 import Coins from '../assets/icons/coin stack.png'
@@ -32,24 +33,24 @@ const Nav = () => {
 
 				<ul className='hidden sm:flex w-1/2 justify-evenly font-bold'>
 					<li className='cursor-pointer'>
-						<Link activeClass='active' to='store' smooth={true} duration={500}>
+						<ScrollLink activeClass='active' to='store' smooth={true} duration={500}>
 							Store
-						</Link>
+						</ScrollLink>
 					</li>
 					<li className='cursor-pointer'>
-						<Link activeClass='active' to='about' smooth={true} duration={500}>
+						<ScrollLink activeClass='active' to='about' smooth={true} duration={500}>
 							About
-						</Link>
+						</ScrollLink>
 					</li>
 					<li className='cursor-pointer'>
-						<Link
+						<ScrollLink
 							activeClass='active'
 							to='location'
 							smooth={true}
 							duration={500}
 						>
 							Find Us
-						</Link>
+						</ScrollLink>
 					</li>
 				</ul>
 				<img
@@ -61,14 +62,19 @@ const Nav = () => {
 
 				<div className='sm:flex flex-row justify-between items-center hidden '>
 					<div className='flex flex-row justify-center items-center w-full'>
+						<Link to={'wallet'} className='flex items-center'>
 						<img className='w-5 mr-2 hover:cursor-pointer' src={Coins} alt='' />
 						<span className='text-xl mr-4'>1,200</span>
+						</Link>
 					</div>
+					<Link to={`cart`}>
+
 					<img
-						className='w-[30px] h-[30px] hover:cursor-pointer'
+						className='w-[33px] h-[27px] hover:cursor-pointer'
 						src={Bag}
 						alt=''
 					/>
+					</Link>
 				</div>
 			</nav>
 			{toggleMenu && (
