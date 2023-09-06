@@ -17,7 +17,7 @@ const CartBox = () => {
 						<Link to='/' className='underline cursor-pointer'>
 							go back
 						</Link>{' '}
-						select somethings to buy.
+						and select somethings to buy.
 					</h2>
 				</div>
 			) : (
