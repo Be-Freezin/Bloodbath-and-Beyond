@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 const CartBox = () => {
 	const { clearCart, cart, removeFromCart } = useCart()
+	const total = cart.reduce((acc, item) => acc + item.price, 0)
 	return (
 		<div className='w-10/12 mx-auto bg-primary-white border-4 border-primary-black rounded-3xl p-4 font-inika'>
 			{cart.length === 0 ? (
@@ -16,7 +17,7 @@ const CartBox = () => {
 						<Link to='/' className='underline cursor-pointer'>
 							go back
 						</Link>{' '}
-						select somethings to buy.
+						and select somethings to buy.
 					</h2>
 				</div>
 			) : (
@@ -45,6 +46,16 @@ const CartBox = () => {
 					</div>
 				))
 			)}
+			<hr className='border-primary-black border-2 rounded-full w-3/4 mx-auto my-4' />
+			<div className='flex justify-end '>
+				<div className='flex items-center font-bold'>
+					<span>Total:</span>
+					<div className='flex items-center'>
+						<img className='w-5 mx-2' src={Coins} alt='' />
+						<span> {total}</span>
+					</div>
+				</div>
+			</div>
 
 			<div className='flex flex-row justify-between items-center'>
 				<Link to='/' className='flex items-center'>
