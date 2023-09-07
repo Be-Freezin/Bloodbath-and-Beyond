@@ -10,6 +10,7 @@ const Header = () => {
 					className='md:w-1/2 my-20 px-4'
 					src={Door}
 					alt='Image of a dungeon door'
+					
 				/>
 				<h1 className=' md:w-5/6 font-heroking md:text-4xl text-lg my-20 text-primary-white  '>
 					Greetings, valiant voyagers of the vast and varied realms! Welcome to
