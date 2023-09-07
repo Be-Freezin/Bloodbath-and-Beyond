@@ -7,7 +7,7 @@ import Location from './Location'
 
 const MenuContainer = () => {
 	return (
-		<div className='bg-primary-background rounded-3xl border-8 border-primary-black mx-0 my-0 sm:w-full'>
+		<div className='bg-primary-background rounded-3xl border-8 border-primary-black mx-0 my-0 sm:w-full '>
 			<Nav />
 			<Header />
 			<ItemGrid />

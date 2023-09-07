@@ -3,7 +3,7 @@ import Chest from '../assets/Chest-bg.png'
 const About = () => {
 	return (
 		<div id='about' className='mt-20 px-2'>
-			<h2 className='font-heroking md:text-7xl text-3xl text-primary-white md:font-outline-2'>
+			<h2 className='font-heroking md:text-7xl text-3xl text-primary-white '>
 				Why spend your gold here?
 			</h2>
 			<div className='flex flex-col md:flex-row items-center justify-evenly mt-20'>

@@ -9,7 +9,7 @@ const CartBox = () => {
 	const { clearCart, cart, removeFromCart } = useCart()
 	const total = cart.reduce((acc, item) => acc + item.price, 0)
 	return (
-		<div className='w-10/12 mx-auto bg-primary-white border-4 border-primary-black rounded-3xl p-4 font-inika'>
+		<div className='w-10/12 mx-auto bg-primary-white border-4 border-primary-black rounded-3xl p-4 my-4 font-inika  sm:min-h-fit'>
 			{cart.length === 0 ? (
 				<div>
 					<h2 className='my-4'>
@@ -22,19 +22,22 @@ const CartBox = () => {
 				</div>
 			) : (
 				cart.map((item) => (
-					<div key={item.id} className='flex items-center justify-between my-2'>
-						<div className='flex justify-between items-center'>
+					<div
+						key={item.id}
+						className='sm:flex sm:flex-row flex-col items-end justify-between my-2'
+					>
+						<div className='flex-col sm:flex sm:flex-row justify-between items-center sm:w-full'>
 							<img
 								className='w-[100px] border-4 border-primary-black rounded-xl'
 								src={item.imagePath}
 								alt=''
 							/>
-							<div className='text-left ml-10 w-full'>
+							<div className='text-left my-2 sm:ml-10 w-full'>
 								<h2 className='font-bold'>{item.name}</h2>
-								<p className='w-2/3 my-2'>{item.description}</p>
+								<p className='sm:w-full my-2 '>{item.description}</p>
 							</div>
 						</div>
-						<div className='flex items-center justify-end w-1/4 '>
+						<div className='flex items-center justify-end sm:w-1/4 my-4 '>
 							<RiDeleteBin5Line
 								size={22}
 								className='cursor-pointer mr-4 text-primary-black '
@@ -57,8 +60,8 @@ const CartBox = () => {
 				</div>
 			</div>
 
-			<div className='flex flex-row justify-between items-center'>
-				<Link to='/' className='flex items-center'>
+			<div className='flex flex-col-reverse sm:flex-row sm:flex  justify-between items-center'>
+				<Link to='/' className='flex items-center mt-4'>
 					<img
 						src={BackArrow}
 						alt='AN arrow directing the user to go back to the main page'
@@ -66,15 +69,17 @@ const CartBox = () => {
 					/>
 					<span>Back to store</span>
 				</Link>
-				<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'>
-					Purchase
-				</button>
-				<button
-					onClick={clearCart}
-					className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
-				>
-					CLEAR CART
-				</button>
+				<div className='flex flex-row-reverse sm:flex-row w-full sm:w-1/3 items-center justify-between sm:flex'>
+					<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'>
+						Purchase
+					</button>
+					<button
+						onClick={clearCart}
+						className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
+					>
+						Clear Cart
+					</button>
+				</div>
 			</div>
 		</div>
 	)
