@@ -67,9 +67,9 @@ const Nav = () => {
 				</ul>
 				<img
 					onClick={menuOpenHandler}
-					className='w-8 sm:hidden'
+					className='w-8 sm:hidden cursor-pointer'
 					src={Hamburger}
-					alt=''
+					alt='icon to open menu'
 				/>
 
 				<div className='sm:flex flex-row justify-between items-center hidden '>
@@ -104,7 +104,7 @@ const Nav = () => {
 				<div className='fixed z-50 top-0 left-0 rounded-2xl h-screen w-full bg-primary-white'>
 					<div className='bg-primary-background flex flex-col h-1/2 w-10/12 mx-auto my-7 rounded-3xl border-8 border-primary-black'>
 						<div className='flex flex-row-reverse p-4'>
-							<img onClick={menuClosedHandler} src={Close} alt='' />
+							<img className='cursor-pointer' onClick={menuClosedHandler} src={Close} alt='icon to close menu' />
 						</div>
 						<div className='flex flex-row justify-center h-full  items-center'>
 							<ul className='h-1/2  w-1/2 flex flex-col justify-evenly font-bold text-2xl text-primary-white'>

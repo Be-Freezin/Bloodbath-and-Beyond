@@ -45,8 +45,8 @@ const ItemCard = ({ id, name, type, price, description, imagePath }) => {
 			>
 				{toggleDescription ? 'Close' : 'Item Info'}
 			</button>
-			<div className='flex justify-evenly items-center sm:w-1/4 w-full'>
-				<img className='w-5' src={Gold} alt='' />
+			<div className='flex justify-evenly items-center sm:w-1/4 '>
+				<img className='w-5 mr-2' src={Gold} alt='' />
 				<p>{price}</p>
 			</div>
 			<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
