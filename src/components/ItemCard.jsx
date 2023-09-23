@@ -6,6 +6,7 @@ const ItemCard = ({ id, name, type, price, description, imagePath }) => {
 	const currentItem = { id, name, type, price, description, imagePath }
 	const [toggleDescription, setToggleDescription] = useState(false)
 	const addToCart = useAddToCart()
+	console.log(imagePath)
 
 	return (
 		<div className='relative flex flex-col justify-evenly items-center bg-primary-white w-4/5  font-inika p-8 rounded-2xl border-4 border-primary-black shadow-3xl '>
