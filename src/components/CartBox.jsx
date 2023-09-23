@@ -93,12 +93,17 @@ const CartBox = () => {
 			{buy && (
 				<div className='h-full backdrop-blur-md mx-auto fixed left-0 right-0 top-0  '>
 					<div className='h-full flex items-center justify-center'>
-						<div className='h-64 w-fit mx-auto p-8 bg-primary-background'>
-							<div className='h-full flex flex-col justify-center items-center'>
+						<div className='h-64 w-fit mx-auto p-8 bg-primary-background rounded-2xl border-8 border-primary-black'>
+							<div className='h-full flex flex-col justify-around items-center'>
 								<h1 className='font-inika text-5xl text-primary-white'>
 									PURCHASE COMPLETE!
 								</h1>
-								<button onClick={purchase}>CLOSE</button>
+								<button
+									onClick={purchase}
+									className='bg-primary-white text-primary-text px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-primary-white-muted hover:text-primary-text'
+								>
+									CLOSE
+								</button>
 							</div>
 						</div>
 					</div>

@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'primary-white': 'var(--primary-white)',
+				'primary-white-muted': 'var(--primary-white-muted)',
 				'header-text': 'var(--primary-white)',
 				'primary-background': 'var(--primary-color)',
 				'primary-text': 'var(--primary-black)',
@@ -12,6 +13,7 @@ export default {
 				'primary-button': 'var(--primary-color)',
 				'primary-black': 'var(--primary-black)',
 				'button-muted': 'var(--primary-color-muted)',
+
 			},
 			fontFamily: {
 				heroking: ['heroking', 'san-serif'],
