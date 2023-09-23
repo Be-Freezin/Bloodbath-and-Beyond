@@ -16,10 +16,7 @@ const router = createBrowserRouter([
 		path: 'cart',
 		element: <Cart />,
 	},
-	{
-		path: 'wallet',
-		element: <Wallet />,
-	},
+	
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
