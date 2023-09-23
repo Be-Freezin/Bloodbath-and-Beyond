@@ -11,7 +11,7 @@ const ItemCard = ({ id, name, type, price, description, imagePath }) => {
 		<div className='relative flex flex-col justify-evenly items-center bg-primary-white w-4/5  font-inika p-8 rounded-2xl border-4 border-primary-black shadow-3xl '>
 			<img
 				className='w-[100px] border-4 border-primary-black rounded-xl'
-				src={`/src/${imagePath}`}
+				src={imagePath}
 				alt='Item Image'
 			/>
 			<h2 className=' mt-4 font-bold'>{name}</h2>
