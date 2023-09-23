@@ -6,8 +6,12 @@ import BackArrow from '../assets/icons/Back Arrow.png'
 import { Link } from 'react-router-dom'
 
 const CartBox = () => {
-	const { clearCart, cart, removeFromCart } = useCart()
+	const { clearCart, cart, removeFromCart, buy, setBuy } = useCart()
 	const total = cart.reduce((acc, item) => acc + item.price, 0)
+	const purchase = () => {
+		clearCart()
+		setBuy(false)
+	}
 	return (
 		<div className='w-10/12 mx-auto bg-primary-white border-4 border-primary-black rounded-3xl p-4 my-4 font-inika  sm:min-h-fit'>
 			{cart.length === 0 ? (
@@ -69,18 +73,37 @@ const CartBox = () => {
 					/>
 					<span>Back to store</span>
 				</Link>
-				<div className='flex flex-row-reverse sm:flex-row w-full sm:w-1/3 items-center justify-between sm:flex'>
-					<button className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'>
-						Purchase
-					</button>
-					<button
-						onClick={clearCart}
-						className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
-					>
-						Clear Cart
-					</button>
-				</div>
+				{cart.length <= 0 ? null : (
+					<div className='flex flex-row-reverse sm:flex-row w-full sm:w-1/3 items-center justify-between sm:flex'>
+						<button
+							onClick={() => setBuy(true)}
+							className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
+						>
+							Purchase
+						</button>
+						<button
+							onClick={clearCart}
+							className=' bg-primary-button text-primary-white px-4 py-1 md:py-2 md:px-8 mt-2 rounded-md border-2 border-primary-black shadow-button hover:cursor-pointer hover:bg-button-muted hover:text-primary-text'
+						>
+							Clear Cart
+						</button>
+					</div>
+				)}
 			</div>
+			{buy && (
+				<div className='h-full backdrop-blur-md mx-auto fixed left-0 right-0 top-0  '>
+					<div className='h-full flex items-center justify-center'>
+						<div className='h-64 w-fit mx-auto p-8 bg-primary-background'>
+							<div className='h-full flex flex-col justify-center items-center'>
+								<h1 className='font-inika text-5xl text-primary-white'>
+									PURCHASE COMPLETE!
+								</h1>
+								<button onClick={purchase}>CLOSE</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			)}
 		</div>
 	)
 }
