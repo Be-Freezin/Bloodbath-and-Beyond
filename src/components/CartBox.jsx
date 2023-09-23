@@ -91,7 +91,7 @@ const CartBox = () => {
 				)}
 			</div>
 			{buy && (
-				<div className='h-screen w-full backdrop-blur-md mx-auto absolute left-0 right-0 top-0 '>
+				<div className='h-full backdrop-blur-md mx-auto fixed left-0 right-0 top-0  '>
 					<div className='h-full flex items-center justify-center'>
 						<div className='h-64 w-fit mx-auto p-8 bg-primary-background'>
 							<div className='h-full flex flex-col justify-center items-center'>

@@ -4,4 +4,4 @@ React-Scroll
 React-Router-Dom
 TailwindCSS
 react-icons
-sm
+local storage
