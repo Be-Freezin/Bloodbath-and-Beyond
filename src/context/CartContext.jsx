@@ -5,6 +5,7 @@ const CartContext = createContext()
 export const CartProvider = ({ children }) =>{
   const storedCart = JSON.parse(localStorage.getItem('cart')) || []
   const [cart, setCart] = useState(storedCart)
+  const [buy, setBuy] = useState(false)
 
   const clearCart = () =>{
     const updatedCart = setCart([])
@@ -20,9 +21,12 @@ export const CartProvider = ({ children }) =>{
 			JSON.stringify(cart.filter((item) => item.id !== itemId))
 		)
 	}
+  // const purchase = () => {
+
+  // }
 
   const contextValue={
-    cart, setCart, clearCart, removeFromCart
+    cart, setCart, clearCart, removeFromCart, buy, setBuy
   }
 
   return (
